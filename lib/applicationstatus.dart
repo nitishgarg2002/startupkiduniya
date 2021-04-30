@@ -22,6 +22,14 @@ class _ApplicationStatusState extends State<ApplicationStatus> {
         child: Column(
           children: [
             SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'You have applied for the following Internships',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height: 10),
             AppliedStatus(),
             Divider(
               height: 5,
@@ -52,8 +60,17 @@ class AppliedStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(15)),
+          decoration: BoxDecoration(boxShadow: [
+            BoxShadow(
+              color: Colors.greenAccent[200],
+              offset: const Offset(
+                5.0,
+                5.0,
+              ),
+              blurRadius: 10.0,
+              spreadRadius: 2.0,
+            ),
+          ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
           height: 75,
           width: MediaQuery.of(context).size.width - 30,
           child: ListTile(

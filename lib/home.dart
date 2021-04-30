@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
                       ),
                       labelText: 'Search for your dream internships',
                       labelStyle: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                       filled: true,
@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
                           color: Colors.black),
                     ),
                   ),
-                  FlatButton(
+                  TextButton(
                     onPressed: () {},
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -92,76 +92,17 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Applied jobs',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'See All',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ),
-                ],
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Startups Registered with us!',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
               ),
-              SizedBox(height: 10),
-              AppliedJobs(),
-              SizedBox(height: 10),
-              AppliedJobs(),
-              SizedBox(height: 10),
-              AppliedJobs(),
-              SizedBox(height: 10),
             ],
           ),
         ));
-  }
-}
-
-class AppliedJobs extends StatelessWidget {
-  const AppliedJobs({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-          decoration: BoxDecoration(
-              color: Color(0xff2C3AA8),
-              borderRadius: BorderRadius.circular(15)),
-          height: 75,
-          width: MediaQuery.of(context).size.width - 30,
-          child: ListTile(
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(
-                'https://images.idgesg.net/images/article/2020/04/slack_logo_with_background_by_mudassir_ali_cc0_via_pexels_2400x1600-100838404-large.jpg',
-              ),
-            ),
-            title: Text(
-              'Product Manager',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20),
-            ),
-            subtitle: Text('Slack',
-                style: TextStyle(color: Colors.white, fontSize: 15)),
-          )),
-    );
   }
 }
 
@@ -173,9 +114,18 @@ class Jobs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          color: Color(0xff2C3AA8), borderRadius: BorderRadius.circular(15)),
-      height: 155,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Colors.greenAccent[200],
+          offset: const Offset(
+            5.0,
+            5.0,
+          ),
+          blurRadius: 10.0,
+          spreadRadius: 2.0,
+        ),
+      ], color: Colors.white, borderRadius: BorderRadius.circular(15)),
+      height: 165,
       width: 120,
       child: Center(
         child: Column(
@@ -196,7 +146,7 @@ class Jobs extends StatelessWidget {
               padding: const EdgeInsets.only(left: 0.0),
               child: Text(
                 'Google',
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: TextStyle(fontSize: 15, color: Colors.black),
               ),
             ),
             Padding(
@@ -204,7 +154,7 @@ class Jobs extends StatelessWidget {
               child: Text(
                 'SDE Intern',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -214,9 +164,9 @@ class Jobs extends StatelessWidget {
                 elevation: 0,
                 child: Text(
                   'View More',
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
-                onPressed: () {})
+                onPressed: () {}),
           ],
         ),
       ),
