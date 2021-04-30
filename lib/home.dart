@@ -11,7 +11,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         drawer: SideDrawer(),
         appBar: AppBar(
           title: Text('Startup Ki Duniya'),
@@ -38,12 +38,12 @@ class _HomeState extends State<Home> {
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                       filled: true,
-                      fillColor: Color(0xff2C3AA8)),
+                      fillColor: Colors.white),
                   // controller: _descController,
                 ),
                 trailing: Icon(
                   Icons.search,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
               SizedBox(height: 20),
@@ -57,17 +57,20 @@ class _HomeState extends State<Home> {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'See All',
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                  FlatButton(
+                    onPressed: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'See All',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
+                      ),
                     ),
                   ),
                 ],

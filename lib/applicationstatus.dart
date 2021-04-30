@@ -10,7 +10,7 @@ class _ApplicationStatusState extends State<ApplicationStatus> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('Application Status'),
@@ -19,38 +19,23 @@ class _ApplicationStatusState extends State<ApplicationStatus> {
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
-              child: Column(
-
+        child: Column(
           children: [
-            SizedBox(height:10),
-            ListTile(
-              title: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
-                    labelText: 'Search for applied internships',
-                    labelStyle: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    filled: true,
-                    fillColor: Color(0xff2C3AA8)),
-                // controller: _descController,
-              ),
-              trailing: Icon(
-                Icons.search,
-                color: Colors.white,
-              ),
+            SizedBox(height: 20),
+            AppliedStatus(),
+            Divider(
+              height: 5,
             ),
             SizedBox(height: 10),
             AppliedStatus(),
+            Divider(
+              height: 5,
+            ),
             SizedBox(height: 10),
             AppliedStatus(),
-            SizedBox(height: 10),
-            AppliedStatus(),
+            Divider(
+              height: 5,
+            ),
           ],
         ),
       ),
@@ -68,8 +53,7 @@ class AppliedStatus extends StatelessWidget {
     return Center(
       child: Container(
           decoration: BoxDecoration(
-              color: Color(0xff2C3AA8),
-              borderRadius: BorderRadius.circular(15)),
+              color: Colors.white, borderRadius: BorderRadius.circular(15)),
           height: 75,
           width: MediaQuery.of(context).size.width - 30,
           child: ListTile(
@@ -81,25 +65,24 @@ class AppliedStatus extends StatelessWidget {
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-
                 Text(
                   'Product Manager',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
                 Text(
                   'Under Review',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 17),
                 ),
               ],
             ),
             subtitle: Text('Slack',
-                style: TextStyle(color: Colors.white, fontSize: 15)),
+                style: TextStyle(color: Colors.black, fontSize: 15)),
           )),
     );
   }
