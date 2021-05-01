@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:startupkiduniya/internships.dart';
 import 'package:startupkiduniya/sidedrawer.dart';
 
 class Home extends StatefulWidget {
@@ -61,7 +62,12 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Internships()));
+                    },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
