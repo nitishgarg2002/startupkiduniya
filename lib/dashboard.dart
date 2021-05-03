@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:startupkiduniya/sidedrawer.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -12,12 +11,10 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('Dashboard'),
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.black,
         actions: [IconButton(icon: Icon(Icons.edit), onPressed: () {})],
       ),
       body: SingleChildScrollView(

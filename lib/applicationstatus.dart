@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:startupkiduniya/sidedrawer.dart';
 
 class ApplicationStatus extends StatefulWidget {
   @override
@@ -11,22 +10,20 @@ class _ApplicationStatusState extends State<ApplicationStatus> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('Application Status'),
         elevation: 0,
         centerTitle: true,
-        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: Text(
-                'You have applied for the following Internships',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                'My Applications',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
             ),
             SizedBox(height: 10),
@@ -44,6 +41,7 @@ class _ApplicationStatusState extends State<ApplicationStatus> {
             Divider(
               height: 5,
             ),
+            SizedBox(height: 10),
           ],
         ),
       ),
@@ -62,7 +60,7 @@ class AppliedStatus extends StatelessWidget {
       child: Container(
           decoration: BoxDecoration(boxShadow: [
             BoxShadow(
-              color: Colors.greenAccent[200],
+              color: Colors.grey,
               offset: const Offset(
                 5.0,
                 5.0,
