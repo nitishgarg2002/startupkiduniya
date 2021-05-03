@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startupkiduniya/user/register.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -9,10 +10,13 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          SizedBox(
-            height: 150,
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 2,
+            child: Image.asset('assets/startupkiduniya.png'),
           ),
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -61,9 +65,13 @@ class _LoginState extends State<Login> {
           Align(
             alignment: Alignment.bottomCenter,
             child: MaterialButton(
+              splashColor: Colors.white,
               child: Text(
                 'Log In',
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(
+                    fontSize: 21,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
               ),
               height: 50,
               minWidth: 150,
@@ -74,7 +82,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
             margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -85,13 +93,19 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Register?",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                  "Register",
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
                 IconButton(
                     splashColor: Color(0xffF52549),
                     icon: Icon(Icons.arrow_forward_ios),
-                    onPressed: () {})
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Register()));
+                    })
               ],
             ),
           ),

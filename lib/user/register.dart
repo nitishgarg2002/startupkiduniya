@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startupkiduniya/user/login.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -143,9 +144,13 @@ class _RegisterState extends State<Register> {
             Align(
               alignment: Alignment.bottomCenter,
               child: MaterialButton(
+                splashColor: Colors.white,
                 child: Text(
                   'Register',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 height: 50,
                 minWidth: 150,
@@ -156,7 +161,7 @@ class _RegisterState extends State<Register> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               margin: EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -174,11 +179,20 @@ class _RegisterState extends State<Register> {
                         splashColor: Color(0xffF52549),
                         iconSize: 30,
                         icon: Icon(Icons.arrow_back_ios),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => Login()));
+                        }),
                   ),
-                  Text(
-                    "SignIn?",
-                    style: TextStyle(fontSize: 20, color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "SignIn",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    ),
                   ),
                 ],
               ),
