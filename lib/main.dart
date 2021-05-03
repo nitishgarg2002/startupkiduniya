@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:startupkiduniya/applicationstatus.dart';
-import 'package:startupkiduniya/dashboard.dart';
-import 'package:startupkiduniya/home.dart';
-import 'package:startupkiduniya/tabbar.dart';
+import 'package:startupkiduniya/user/applicationstatus.dart';
+import 'package:startupkiduniya/user/dashboard.dart';
+import 'package:startupkiduniya/user/home.dart';
+import 'package:startupkiduniya/user/login.dart';
+import 'package:startupkiduniya/user/register.dart';
+import 'package:startupkiduniya/user/tabbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primaryColor: Color(0xffF52549)),
-      home: Tabbar(),
+      home: Login(),
       debugShowCheckedModeBanner: false,
     );
   }

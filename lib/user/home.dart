@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:startupkiduniya/internshipDetails.dart';
+import 'package:startupkiduniya/user/internshipDetails.dart';
 
 class Home extends StatefulWidget {
   @override

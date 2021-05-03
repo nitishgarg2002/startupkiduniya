@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:startupkiduniya/applicationstatus.dart';
-import 'package:startupkiduniya/dashboard.dart';
-import 'package:startupkiduniya/home.dart';
+import 'package:startupkiduniya/user/applicationstatus.dart';
+import 'package:startupkiduniya/user/dashboard.dart';
+import 'package:startupkiduniya/user/home.dart';
 
 class Tabbar extends StatefulWidget {
   @override
