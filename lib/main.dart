@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startupkiduniya/onboarding.dart';
+import 'package:startupkiduniya/startup/tabbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(primaryColor: Color(0xffF52549)),
-      home: Onboarding(),
+      home: Tabbar(),
       debugShowCheckedModeBanner: false,
     );
   }

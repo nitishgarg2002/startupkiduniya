@@ -13,7 +13,9 @@ class _OnboardingState extends State<Onboarding> {
       body: Container(
         child: Column(
           children: [
-            Image.asset('assets/startupkiduniya.png'),
+            Container(
+                height: MediaQuery.of(context).size.height / 1.5,
+                child: Image.asset('assets/startupkiduniya.png')),
             SizedBox(height: 25),
             MaterialButton(
               shape: RoundedRectangleBorder(
