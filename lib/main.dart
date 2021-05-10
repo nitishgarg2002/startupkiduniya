@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startupkiduniya/onboarding.dart';
-import 'package:startupkiduniya/startup/tabbar.dart';
+import 'package:startupkiduniya/user/tabbar.dart';
 
 void main() {
   runApp(MyApp());
