@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:startupkiduniya/user/login.dart';
+import 'package:startupkiduniya/startup/login.dart' as StartupLogin;
+import 'package:startupkiduniya/user/login.dart' as UserLogin;
 
 class Onboarding extends StatefulWidget {
   @override
@@ -21,8 +22,8 @@ class _OnboardingState extends State<Onboarding> {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
               onPressed: () {
-                Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Login()));
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => UserLogin.Login()));
               },
               height: 50,
               minWidth: MediaQuery.of(context).size.width / 2,
@@ -50,7 +51,12 @@ class _OnboardingState extends State<Onboarding> {
             MaterialButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => StartupLogin.Login()));
+              },
               height: 50,
               minWidth: MediaQuery.of(context).size.width / 2,
               color: Colors.white,

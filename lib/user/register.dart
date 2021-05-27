@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:startupkiduniya/providers/auth.dart';
+import 'package:startupkiduniya/user/home.dart';
 import 'package:startupkiduniya/user/login.dart';
 
 class Register extends StatefulWidget {
@@ -7,6 +10,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  bool _isLoading = false;
   TextEditingController name, email, number, password;
 
   @override
@@ -156,7 +160,27 @@ class _RegisterState extends State<Register> {
                 minWidth: 150,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
-                onPressed: () {},
+                onPressed: () async {
+                  setState(() {
+                    _isLoading = true;
+                  });
+                  try {
+                    // Log user in
+                    await Provider.of<Auth>(context, listen: false).register(
+                        email.text.toString(),
+                        password.text.toString(),
+                        name.text.toString(),
+                        int.parse(number.text),
+                        "user");
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Home()));
+                  } catch (err) {
+                    print(err);
+                  }
+                  setState(() {
+                    _isLoading = false;
+                  });
+                },
                 color: Color(0xffF52549),
               ),
             ),

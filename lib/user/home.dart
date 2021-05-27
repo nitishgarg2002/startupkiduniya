@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:startupkiduniya/providers/auth.dart';
 import 'package:startupkiduniya/user/internshipDetails.dart';
 
 class Home extends StatefulWidget {
@@ -15,6 +17,13 @@ class _HomeState extends State<Home> {
         elevation: 0,
         backgroundColor: Color(0xffF52549),
         centerTitle: true,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.logout),
+              onPressed: () {
+                Provider.of<Auth>(context, listen: false).logout();
+              })
+        ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
