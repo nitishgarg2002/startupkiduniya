@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:startupkiduniya/onboarding.dart';
 import 'package:startupkiduniya/providers/auth.dart';
+import 'package:startupkiduniya/providers/internships.dart';
 import 'package:startupkiduniya/user/register.dart';
 import 'package:startupkiduniya/user/home.dart';
 import 'package:startupkiduniya/user/login.dart';
@@ -22,7 +23,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider.value(
           value: Auth(),
         ),
-        // ChangeNotifierProxyProvider( update: (ctx,auth,previousInternships)=>)
+        ChangeNotifierProxyProvider<Auth, Internships>(
+            update: (ctx, auth, previousInternships) => Internships(
+                previousInternships == null
+                    ? []
+                    : previousInternships.internships))
       ],
       child: Consumer<Auth>(
           builder: (ctx, auth, _) => MaterialApp(

@@ -79,9 +79,7 @@ class Auth with ChangeNotifier {
       notifyListeners();
       final prefs = await SharedPreferences.getInstance();
       final userData = json.encode(
-        {
-          'token': _token,
-        },
+        {'token': _token},
       );
 
       prefs.setString('userData', userData);
@@ -120,9 +118,7 @@ class Auth with ChangeNotifier {
       notifyListeners();
       final prefs = await SharedPreferences.getInstance();
       final userData = json.encode(
-        {
-          'token': _token,
-        },
+        {'token': _token},
       );
 
       prefs.setString('userData', userData);
@@ -152,8 +148,11 @@ class Auth with ChangeNotifier {
     }
     final extractedUserData =
         json.decode(prefs.getString('userData')) as Map<String, Object>;
-
+    final userrole =
+        json.decode(prefs.getString('role')) as Map<String, Object>;
     _token = extractedUserData['token'];
+    role = userrole['role'];
+    print(prefs.getString('userData'));
     notifyListeners();
     //_autoLogout();
     return true;

@@ -8,6 +8,7 @@ import 'package:startupkiduniya/providers/auth.dart';
 import 'package:startupkiduniya/startup/home.dart';
 import 'package:startupkiduniya/user/register.dart';
 import 'package:http/http.dart' as http;
+import 'package:startupkiduniya/user/tabbar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -15,8 +16,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  var _isLoading = false;
-
   TextEditingController email, password;
 
   @override
@@ -111,20 +110,16 @@ class _LoginState extends State<Login> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 onPressed: () async {
-                  setState(() {
-                    _isLoading = true;
-                  });
                   try {
                     // Log user in
                     await Provider.of<Auth>(context, listen: false)
                         .login(email.text.toString(), password.text.toString());
                     await Provider.of<Auth>(context, listen: false).user();
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => Tabbar()));
                   } catch (err) {
                     print(err);
                   }
-                  setState(() {
-                    _isLoading = false;
-                  });
                 },
                 color: Color(0xffF52549),
               ),
